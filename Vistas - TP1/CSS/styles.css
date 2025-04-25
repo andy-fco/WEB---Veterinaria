@@ -1,15 +1,13 @@
-.fade {
-}
-
-#login {
+#login,
+#registro {
   margin: 10% auto;
   background-color: #fff;
   border-radius: 20px;
   color: black;
 }
 
-#login-form {
-  opacity: 1 !important;
+#registro {
+  margin-top: 5%;
 }
 
 body {
@@ -24,4 +22,21 @@ body {
 
 footer {
   background-color: #521065;
+}
+
+.btn-v {
+  color: aliceblue;
+  background-color: #a403d1;
+}
+
+.btn-v:hover {
+  background-color: #8001a3;
+}
+
+.btn-v:active {
+  background-color: #62007e;
+}
+
+a {
+  text-decoration: none;
 }
