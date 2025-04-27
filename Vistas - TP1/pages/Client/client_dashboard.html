@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gestión Veterinaria | Amigos son los amigos</title>
+    <title>Amigos son los amigos</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="../../CSS/styles.css" />
   </head>
   <body class="bg-light text-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark user shadow-sm">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="admin_dashboard.html"
+        <a class="navbar-brand fw-bold" href="client_dashboard.html"
           >Amigos son los amigos</a
         >
         <button
@@ -27,15 +27,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="admin_usuarios.html"
-                >Clientes</a
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="client_mascotas.html"
+                >Mascotas</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="admin_reportes.html">Reportes</a>
+              <a class="nav-link" href="client_turnos.html">Turnos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="admin_empleados.html">Empleados</a>
+              <a class="nav-link" href="client_facturas.html">Facturas</a>
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0">
@@ -48,13 +51,12 @@
                 aria-expanded="false"
               >
                 <img
-                  src="../../img/administrador.png"
+                  src="../../img/user-icon.png"
                   alt="Avatar"
                   class="rounded-circle me-2"
-                  width="32"
-                  height="32"
+                  width="40"
+                  height="40"
                 />
-                <span>Administrador</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#">Perfil</a></li>
@@ -86,23 +88,22 @@
 
     <section id="menu" class="py-5 bg-white">
       <div class="container">
-        <h2 class="text-center mb-5 fw-bold">Menu</h2>
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card h-100 shadow-sm border-0 hover-effect text-center">
               <img
-                src="../../img/clientes-2.jpg"
+                src="../../img/mascotas-2.jpg"
                 alt="pacientes"
                 class="card-img-top"
               />
               <div class="card-body">
-                <h5 class="card-title mt-3">Clientes</h5>
-                <p class="card-text">Cuentas de clientes.</p>
+                <h5 class="card-title mt-3">Mascotas</h5>
+                <p class="card-text">Mis mascotas.</p>
 
                 <a
-                  href="admin_usuarios.html"
-                  class="btn btn-outline-primary rounded-pill mt-3"
-                  >Ver usuarios</a
+                  href="client_mascotas.html"
+                  class="btn btn-outline-user rounded-pill mt-3"
+                  >Ver mascotas</a
                 >
               </div>
             </div>
@@ -111,17 +112,17 @@
           <div class="col-md-4">
             <div class="card h-100 shadow-sm border-0 hover-effect text-center">
               <img
-                src="../../img/estadisticas.jpg"
+                src="../../img/turnos.jpg"
                 alt="turnos"
                 class="card-img-top"
               />
               <div class="card-body">
-                <h5 class="card-title mt-3">Reportes</h5>
-                <p class="card-text">Mascotas, consultas y turnos.</p>
+                <h5 class="card-title mt-3">Turnos</h5>
+                <p class="card-text">Citas y horarios.</p>
                 <a
-                  href="admin_reportes.html"
-                  class="btn btn-outline-primary rounded-pill mt-3"
-                  >Ver reportes</a
+                  href="client_turnos.html"
+                  class="btn btn-outline-user rounded-pill mt-3"
+                  >Ver turnos</a
                 >
               </div>
             </div>
@@ -130,17 +131,17 @@
           <div class="col-md-4">
             <div class="card h-100 shadow-sm border-0 hover-effect text-center">
               <img
-                src="../../img/empleados.jpg"
+                src="../../img/facturas-2.jpg"
                 alt="Empleados"
                 class="card-img-top"
               />
               <div class="card-body">
-                <h5 class="card-title mt-3">Empleados</h5>
-                <p class="card-text">Nuestro equipo.</p>
+                <h5 class="card-title mt-3">Facturas</h5>
+                <p class="card-text">Pagos y deudas.</p>
                 <a
-                  href="admin_empleados.html"
-                  class="btn btn-outline-primary rounded-pill mt-3"
-                  >Ver empleados</a
+                  href="client_facturas.html"
+                  class="btn btn-outline-user rounded-pill mt-3"
+                  >Ver facturas</a
                 >
               </div>
             </div>
@@ -171,7 +172,7 @@
               class="card p-4 text-center border-0 shadow-sm h-100 hover-effect"
             >
               <p class="fst-italic text-muted">
-                "Gestionar citas y stock ahora es más sencillo que nunca."
+                "Agendar y organizar citas ahora es más sencillo que nunca."
               </p>
               <h6 class="fw-bold mt-3 mb-0">Ezequiel López</h6>
               <small class="text-muted">Veterinario</small>
@@ -193,29 +194,28 @@
       </div>
     </section>
 
-    <footer class="bg-soft text-dark bg-primary py-4 mt-5 shadow-sm">
+    <footer class="bg-soft text-dark footer-user py-4 mt-5 shadow-sm">
       <div class="container">
         <div class="d-flex mb-3 gap-5">
           <a href="#" class="text-white text-decoration-none footer-link"
             ><h5>Inicio</h5></a
           >
           <a
-            href="admin_usuarios.html"
+            href="client_mascotas.html"
             class="text-white text-decoration-none footer-link"
-            ><h5>Clientes</h5></a
+            ><h5>Mascotas</h5></a
           >
           <a
-            href="admin_reportes.html"
+            href="client_turnos.html"
             class="text-white text-decoration-none footer-link"
-            ><h5>Reportes</h5></a
+            ><h5>Turnos</h5></a
           >
           <a
-            href="admin_empleados.html"
+            href="client_facturas.html"
             class="text-white text-decoration-none footer-link"
-            ><h5>Empleados</h5></a
+            ><h5>Facturas</h5></a
           >
         </div>
-
         <p class="mt-2 fw-bold text-center">
           Amigos son los amigos &copy; 2025
         </p>

@@ -20,23 +20,132 @@ body {
   background-repeat: no-repeat;
 }
 
-footer {
+/*footer > h5:hover {
+  color: #000000;
+}*/
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Usuario*/
+
+.user {
+  background-color: #a403d1;
+}
+
+.footer-user {
   background-color: #521065;
 }
 
 .btn-v {
   color: aliceblue;
   background-color: #a403d1;
+  border-color: #a403d1;
 }
 
-.btn-v:hover {
+.btn-outline-user {
+  color: #a403d1;
+  background-color: #fff;
+  border-color: #a403d1;
+}
+
+.btn-v:hover,
+.btn-outline-user:hover {
+  color: aliceblue;
   background-color: #8001a3;
+  border-color: #8001a3;
 }
 
 .btn-v:active {
   background-color: #62007e;
+  border-color: #62007e;
 }
 
-a {
-  text-decoration: none;
+/*Cliente -> mascotas, turnos, facturas*/
+
+#mascotas,
+#turnos,
+#facturas {
+  max-width: 800px;
+  max-height: 400px;
+
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.mascota,
+.turno,
+.factura {
+  border-radius: 15px;
+}
+
+/*Admin -> Clientes, Empleados*/
+
+#panel-clientes,
+#panel-empleados {
+  max-width: 800px;
+}
+
+#client-list,
+#employee-list {
+  max-width: 1000px;
+  background-color: #fff;
+
+  border-radius: 15px;
+  max-height: 250px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.listed-client,
+.listed-employee {
+  color: black;
+  padding: 5px;
+  border-bottom: 2px #969696 solid;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.text-bg-client {
+  background-color: #a403d1;
+}
+
+.text-bg-employee {
+  background-color: #e97b14;
+}
+
+.listed-client:hover,
+.listed-employee:hover {
+  background-color: #ddeefc;
+}
+
+.listed-client:active,
+.listed-employee:active {
+  background-color: #bedef8;
+}
+
+.last {
+  border: none;
+}
+
+/*Admin -> Info Cliente, Info Empleado*/
+
+#user-info,
+#employee-info {
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 20px;
+  max-height: 450px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.no-bullets {
+  list-style: none;
+}
+
+li {
+  padding-top: 5px;
 }

@@ -1,52 +1,284 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empleados</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-light text-dark">
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="admin_dashboard.html">Amigos son los amigos</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="admin_usuarios.html">Pacientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin_reportes.html">Reportes y estadísticas</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="admin_empleados.html">Empleados</a>
-          </li>
-    
-        </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="imgTP/administrador.png" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
-              <span>Administrador</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Perfil</a></li>
-              <li><a class="dropdown-item" href="#">Configuración</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
-            </ul>
-          </li>
-        </ul>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empleados</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../CSS/styles.css" />
+  </head>
+  <body class="bg-light text-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="admin_dashboard.html"
+          >Amigos son los amigos</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="admin_usuarios.html"
+                >Clientes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin_reportes.html">Reportes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="admin_empleados.html"
+                >Empleados</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="../../img/administrador.png"
+                  alt="Avatar"
+                  class="rounded-circle me-2"
+                  width="32"
+                  height="32"
+                />
+                <span>Administrador</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-danger" href="#"
+                    >Cerrar sesión</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
- 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    </nav>
+
+    <main class="p-2">
+      <div id="panel-empleados" class="text-center mx-auto mt-5">
+        <h1 class="mb-5">Panel de Gestión de Empleados</h1>
+        <div class="d-flex">
+          <form class="d-flex col-10">
+            <input
+              type="text"
+              name="employee-search"
+              class="form-control"
+              maxlength="30"
+              placeholder="Buscar empleados"
+            />
+            <button
+              type="submit"
+              id="search-btn-admin"
+              class="btn btn-primary rounded-pill ms-2"
+            >
+              Buscar
+            </button>
+          </form>
+          <button
+            type="button"
+            id="crear-btn"
+            class="btn btn-primary rounded-pill ms-2 text-center"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-crear"
+          >
+            Crear
+          </button>
+        </div>
+      </div>
+
+      <div id="employee-list" class="mx-auto my-4">
+        <div class="listed-employee">
+          <a href="admin_empleado_info.html">
+            <span class="badge text-bg-employee">Empleado</span> Ricardo Solís |
+            ricardo.solis@gmail.com || Fisioterapia</a
+          >
+        </div>
+        <div class="listed-employee">
+          <a href='#"'>
+            <span class="badge text-bg-employee">Empleado</span> Lucila Molina |
+            luli.m.5@yahoo.com || Oncología</a
+          >
+        </div>
+        <div class="listed-employee last">
+          <a href='#"'>
+            <span class="badge text-bg-employee">Empleado</span> Beth Sánchez |
+            bethsanchez@gmail.com || Cirugía</a
+          >
+        </div>
+      </div>
+
+      <!--<div class="d-flex justify-content-end align-items-end">
+        <button
+          type="button"
+          id="crear-btn"
+          class="btn btn-primary d-block m-3 px-4 text-center position-sticky"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-crear"
+        >
+          Crear Usuario
+        </button>
+      </div>-->
+
+      <!-- Modal Crear Empleado -->
+      <div
+        class="modal fade"
+        id="modal-crear"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Crear empleado
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form method="post" id="form-crear-empleado">
+                <div class="row">
+                  <div class="mb-3 col-6">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      name="nombre"
+                      class="form-control"
+                      maxlength="30"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3 col-6">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input
+                      type="text"
+                      name="apellido"
+                      class="form-control"
+                      maxlength="30"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-3">
+                    <label for="correo" class="form-label"
+                      >Correo electrónico</label
+                    >
+                    <input
+                      type="text"
+                      name="correo"
+                      class="form-control"
+                      maxlength="50"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-3 col-7">
+                    <label for="especialidad" class="form-label"
+                      >Especialidad</label
+                    >
+                    <input
+                      type="text"
+                      name="especialidad"
+                      class="form-control"
+                      maxlength="30"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-3 col-6">
+                    <label for="username" class="form-label"
+                      >Nombre de usuario</label
+                    >
+                    <input
+                      type="text"
+                      name="username"
+                      class="form-control"
+                      maxlength="30"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3 col-6">
+                    <label for="contra" class="form-label">Contraseña</label>
+                    <input
+                      type="text"
+                      name="contra"
+                      class="form-control"
+                      maxlength="30"
+                      minlength="8"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="row justify-content-end">
+                  <button
+                    type="submit"
+                    class="btn btn-primary rounded-pill col-3 mx-2"
+                  >
+                    Crear
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-soft text-dark bg-primary py-2 shadow-sm fixed-bottom">
+      <div class="container">
+        <div class="d-flex mt-2 gap-3 gap-md-5 flex-wrap">
+          <a
+            href="admin_dashboard.html"
+            class="text-white text-decoration-none footer-link"
+            ><h5>Inicio</h5></a
+          >
+          <a href="#" class="text-white text-decoration-none footer-link"
+            ><h5>Clientes</h5></a
+          >
+          <a
+            href="admin_reportes.html"
+            class="text-white text-decoration-none footer-link"
+            ><h5>Reportes</h5></a
+          >
+          <a
+            href="admin_empleados.html"
+            class="text-white text-decoration-none footer-link"
+            ><h5>Empleados</h5></a
+          >
+        </div>
+
+        <p class="fw-bold text-center">Amigos son los amigos &copy; 2025</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
