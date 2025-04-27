@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amigos son los amigos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../CSS/styles.css" />
+  </head>
+  <body id="empleado-dashboard" class="bg-light text-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark user shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="empleado_dashboard.html"
+          >Amigos son los amigos</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="empleado_mascotas.html">Mascotas</a>
+            </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="empleado_diagnosticos.html"
+                >Diagnósticos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="empleado_facturacion.html">Facturas</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="empleado_turnos.html">Turnos</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="../../img/user-icon.png"
+                  alt="Avatar"
+                  class="rounded-circle me-2"
+                  width="40"
+                  height="40"
+                />
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-danger" href="#"
+                    >Cerrar sesión</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-soft text-dark text-center py-5 mb-5 shadow-sm">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Amigos son los amigos</h1>
+        <h3 class="lead mt-3">La veterinaria que cuida lo que más amas</h3>
+        <a
+          href="#menu"
+          class="btn btn-light btn-lg mt-4 shadow-sm rounded-pill px-4"
+          >Comenzar</a
+        >
+      </div>
+    </header>
+
+    <section id="menu" class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 hover-effect text-center">
+              <img
+                src="../../img/mascotas-2.jpg"
+                alt="Mascotas"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title mt-3">Mascotas</h5>
+                <p class="card-text">Gestión de mascotas</p>
+
+                <a
+                  href="empleado_mascotas.html"
+                  class="btn btn-outline-user rounded-pill mt-3"
+                  >Ver mascotas</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 hover-effect text-center">
+              <img
+                src="../../img/diagnostico-empleados.jpg"
+                alt="turnos"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title mt-3">Diagnósticos</h5>
+                <p class="card-text">Consultas y diagnósticos</p>
+                <a
+                  href="empleado_diagnosticos.html"
+                  class="btn btn-outline-user rounded-pill mt-3"
+                  >Ver diagnósticos</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 hover-effect text-center">
+              <img
+                src="../../img/facturas-2.jpg"
+                alt="Empleados"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title mt-3">Facturas</h5>
+                <p class="card-text">Gestión de facturación</p>
+                <a
+                  href="empleado_facturacion.html"
+                  class="btn btn-outline-user rounded-pill mt-3"
+                  >Ver facturas</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row col-lg-8 mx-auto">
+          <div class="card shadow-sm border-0 hover-effect mt-5">
+            <div class="card-body d-flex justify-content-between">
+              <div>
+                <h5 class="card-title">Turnos</h5>
+                <p class="card-text">Panel de gestión de turnos.</p>
+              </div>
+
+              <a
+                href="empleado_turnos.html"
+                class="btn btn-outline-user rounded-pill align-self-center"
+                >Ver turnos</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-soft text-dark footer-user py-4 mt-5 shadow-sm">
+      <div class="container">
+        <div class="d-flex mb-3 gap-5">
+          <a href="#" class="text-white text-decoration-none footer-link"
+            ><h5>Inicio</h5></a
+          >
+          <a
+            href="client_mascotas.html"
+            class="text-white text-decoration-none footer-link"
+            ><h5>Mascotas</h5></a
+          >
+          <a
+            href="client_turnos.html"
+            class="text-white text-decoration-none footer-link"
+            ><h5>Diagnósticos</h5></a
+          >
+          <a
+            href="client_facturas.html"
+            class="text-white text-decoration-none footer-link"
+            ><h5>Facturas</h5></a
+          >
+        </div>
+        <p class="mt-2 fw-bold text-center">
+          Amigos son los amigos &copy; 2025
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
