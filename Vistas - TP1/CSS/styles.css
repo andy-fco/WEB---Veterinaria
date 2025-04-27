@@ -6,6 +6,18 @@
   color: black;
 }
 
+#logout {
+  max-width: 400px;
+  margin: 10% auto;
+  background-color: #fff;
+  border-radius: 20px;
+  color: black;
+}
+
+.fondo-logout {
+  background-color: #e585ff;
+}
+
 #registro {
   margin-top: 5%;
 }
