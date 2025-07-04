@@ -27,11 +27,6 @@ class Pet extends Model
         return $this->hasMany(Appointment::class, 'id_mascota');
     }
 
-    public function consultations()
-    {
-        return $this->hasMany(Consultation::class, 'id_mascota');
-    }
-
     public function diagnoses()
     {
         return $this->hasMany(Diagnosis::class, 'id_mascota');
