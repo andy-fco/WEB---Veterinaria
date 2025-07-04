@@ -1,0 +1,232 @@
+#login,
+#registro {
+    margin: 10% auto;
+    background-color: #fff;
+    border-radius: 20px;
+    color: black;
+}
+
+#logout {
+    max-width: 400px;
+    margin: 10% auto;
+    background-color: #fff;
+    border-radius: 20px;
+    color: black;
+}
+
+.fondo-logout {
+    background-color: #e585ff;
+}
+
+#registro {
+    margin-top: 5%;
+}
+
+body {
+    background-color: #afafaf;
+}
+
+.fondo-login {
+    background-image: url("../../public/img/fondo.01.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*footer > h5:hover {
+  color: #000000;
+}*/
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*Usuario*/
+
+.user {
+    background-color: #a403d1;
+}
+
+.footer-user {
+    background-color: #521065;
+}
+
+.btn-v {
+    color: aliceblue;
+    background-color: #a403d1;
+    border-color: #a403d1;
+}
+
+.btn-outline-user {
+    color: #a403d1;
+    background-color: #fff;
+    border-color: #a403d1;
+}
+
+.btn-v:hover,
+.btn-outline-user:hover {
+    color: aliceblue;
+    background-color: #8001a3;
+    border-color: #8001a3;
+}
+
+.btn-v:active {
+    background-color: #62007e;
+    border-color: #62007e;
+}
+
+/*Cliente -> mascotas, turnos, facturas*/
+
+#mascotas,
+#turnos,
+#facturas {
+    max-width: 800px;
+    max-height: 400px;
+
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.mascota,
+.turno,
+.factura,
+.diagnostico {
+    border-radius: 15px;
+}
+
+/*Admin -> Clientes, Empleados*/
+
+#panel-clientes,
+#panel-empleados {
+    max-width: 800px;
+}
+
+#client-list,
+#employee-list,
+#pet-list {
+    max-width: 1000px;
+    background-color: #fff;
+
+    border-radius: 15px;
+    max-height: 250px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.listed-client,
+.listed-employee,
+.listed-pet {
+    color: black;
+    padding: 5px;
+    border-bottom: 2px #969696 solid;
+    margin: 0px 5px;
+    border-radius: 5px;
+}
+
+.text-bg-client {
+    background-color: #a403d1;
+}
+
+.text-bg-employee {
+    background-color: #e97b14;
+}
+
+.listed-client:hover,
+.listed-employee:hover {
+    background-color: #ddeefc;
+}
+
+.listed-client:active,
+.listed-employee:active {
+    background-color: #bedef8;
+}
+
+.last {
+    border: none;
+}
+
+/*Admin -> Info Cliente, Info Empleado*/
+
+#user-info,
+#employee-info {
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 20px;
+    max-height: 450px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.no-bullets {
+    list-style: none;
+}
+
+li {
+    padding-top: 5px;
+}
+
+/* empleado-dashboard*/
+#empleado-dashboard .navbar {
+    background-color: #cc5500 !important;
+}
+
+#empleado-dashboard .footer-user {
+    background-color: #cc5500 !important;
+}
+
+/* empleado mascotas*/
+.bg-naranja {
+    background-color: #cc5500 !important;
+}
+
+.bg-naranja .text-white {
+    color: white !important;
+}
+
+/* empleado mascotas botones*/
+.btn-outline-employee {
+    color: #cc5500;
+    border-color: #cc5500;
+}
+
+.btn-outline-employee:hover {
+    background-color: #cc5500;
+    color: white;
+    border-color: #ff7f50;
+}
+/*#empleado-dashboard .text-bg-client {
+  background-color: #cc5500 !important;
+  color: white !important;
+}*/
+#empleado-dashboard .btn-primary {
+    background-color: #cc5500 !important;
+    border-color: #cc5500 !important;
+}
+
+#empleado-dashboard .btn-primary:hover {
+    background-color: #ff7f50 !important;
+    border-color: #ff7f50 !important;
+}
+
+.listed-pet:hover {
+    background-color: #ffcebc;
+}
+
+.liste-pet:active {
+    background-color: #ffbea7;
+}
+
+#factura-header {
+    max-width: 800px;
+}
+
+/*#crear-diagnostico-btn {
+    position: absolute;
+    bottom: 120px;
+    right: 15px;
+}*/
+
+#descripcion,
+#tratamiento {
+    height: 150px;
+}

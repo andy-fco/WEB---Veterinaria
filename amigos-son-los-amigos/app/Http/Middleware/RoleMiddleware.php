@@ -36,7 +36,10 @@ class RoleMiddleware
             }
         }
 
-        // Si no se encuentra un rol coincidente
+
         abort(403, 'Acceso no autorizado para este rol.');
     }
+
+
+
 }

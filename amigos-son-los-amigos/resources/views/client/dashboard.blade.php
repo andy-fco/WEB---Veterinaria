@@ -39,7 +39,8 @@
                                 <h5 class="card-title mt-3">Mascotas</h5>
                                 <p class="card-text">Mis mascotas.</p>
 
-                                <a href="{{ route('client.mascotas.index') }}" class="btn btn-outline-user rounded-pill mt-3">Ver
+                                <a href="{{ route('client.mascotas.index') }}"
+                                    class="btn btn-outline-user rounded-pill mt-3">Ver
                                     mascotas</a>
                             </div>
                         </div>
@@ -51,7 +52,8 @@
                             <div class="card-body">
                                 <h5 class="card-title mt-3">Turnos</h5>
                                 <p class="card-text">Citas y horarios.</p>
-                                <a href="{{ route('client.turnos.index') }}" class="btn btn-outline-user rounded-pill mt-3">Ver
+                                <a href="{{ route('client.turnos.index') }}"
+                                    class="btn btn-outline-user rounded-pill mt-3">Ver
                                     turnos</a>
                             </div>
                         </div>
@@ -63,7 +65,8 @@
                             <div class="card-body">
                                 <h5 class="card-title mt-3">Facturas</h5>
                                 <p class="card-text">Pagos y deudas.</p>
-                                <a href="{{route('client.facturas.index')}}" class="btn btn-outline-user rounded-pill mt-3">Ver
+                                <a href="{{route('client.facturas.index')}}"
+                                    class="btn btn-outline-user rounded-pill mt-3">Ver
                                     facturas</a>
                             </div>
                         </div>
