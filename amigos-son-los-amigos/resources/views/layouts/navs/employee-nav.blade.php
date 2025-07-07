@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark user shadow-sm bg-naranja">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="{{ route('employee.dashboard') }}">Amigos son los amigos</a>
+        <a class="navbar-brand fw-bold" href="{{ route('employee.dashboard') }}"><img
+                src="{{ asset('img/logo-vet.png') }}" alt="Logo Veterinaria" height="70" width="146"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,11 +29,6 @@
                             height="40" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <!--<li><a class="dropdown-item" href="#">Perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Configuración</a></li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>-->
                         <li>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

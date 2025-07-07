@@ -15,8 +15,12 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <!-- Tu CSS personalizado -->
+    <!-- CSS personalizado -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+
+
 </head>
 
 <body>
