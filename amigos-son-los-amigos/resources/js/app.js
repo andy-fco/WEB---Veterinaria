@@ -6,6 +6,9 @@ window.Popper = Popper;
 import * as bootstrap from "bootstrap";
 window.bootstrap = bootstrap;
 
+import Chart from 'chart.js/auto'; // para importar lo de los graficos. 
+window.Chart = Chart; 
+
 import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
