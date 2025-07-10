@@ -5,9 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PetController;
 use App\Http\Controllers\AppointmentController;
-use App\Http\Controllers\EmployeeController; 
-use App\Http\Controllers\ConsultationController; 
-use App\Http\Controllers\BillController; 
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\DiagnosisController;
@@ -127,11 +126,11 @@ Route::middleware(['auth', 'role:administrador'])->prefix('admin')->name('admin.
     Route::delete('/empleados/{employee}', [EmployeeController::class, 'destroy'])->name('employees.destroy');
 
     // Rutas para Reportes (sin controlador CRUD, vista directa)
-  /*  Route::get('/reportes', function () {
-        return view('admin.reportes');
-    })->name('reportes');        aca cambie la ruta para que muestre directamente la funcion showReports 
-                                 como para que actualice bien los datos antes de mostrar la vista*/
- Route::get('/reportes', [AdministratorController::class, 'showReports'])->name('reportes');
+    /*  Route::get('/reportes', function () {
+          return view('admin.reportes');
+      })->name('reportes');        aca cambie la ruta para que muestre directamente la funcion showReports 
+                                   como para que actualice bien los datos antes de mostrar la vista*/
+    Route::get('/reportes', [AdministratorController::class, 'showReports'])->name('reportes');
 });
 
 
