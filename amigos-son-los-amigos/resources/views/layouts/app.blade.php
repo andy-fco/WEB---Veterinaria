@@ -68,8 +68,11 @@
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- esto es para que se vean los graficos, sin esto no funcionan en teoria -->
-     <script src="{{ asset('build/assets/app.js') }}"></script> {{-- Verifica la ruta si usas Vite/Mix --}}
-        @stack('scripts')
+    <script src="{{ asset('build/assets/app.js') }}"></script>
+
+    <!-- Scripts adicionales -->
+    @stack('scripts')
+
 </body>
 
 </html>

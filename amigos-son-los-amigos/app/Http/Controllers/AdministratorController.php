@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Administrator;
 use App\Models\User;
-use App\Models\Bill; // agrego estos dos 
-use App\Models\Pet; // para los graficos
+use App\Models\Bill;
+use App\Models\Pet;
+use App\Models\Appointment;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
+use Carbon\Carbon;
+
+
 
 
 class AdministratorController extends Controller
@@ -35,9 +39,10 @@ class AdministratorController extends Controller
     }
 
 
-    /**/  public function store(Request $request)
- {
-          $request->validate([
+    /**/
+    public function store(Request $request)
+    {
+        $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:8|max:255',
@@ -48,9 +53,9 @@ class AdministratorController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'rol_id' => 3, 
+                'rol_id' => 3,
             ]);
-           
+
             $administrator = Administrator::create([
                 'nombre' => $request->nombre,
                 'apellido' => $request->apellido,
@@ -70,22 +75,37 @@ class AdministratorController extends Controller
 
 
 
- //  METODO PARA MOSTRAR LOS GRÁFICOS 
+    //  METODO PARA MOSTRAR LOS GRÁFICOS 
 
     public function showReports()
     {
+
+        // Pacientes 
+        $petsCount = Pet::count();
+
+        // Turnos agendados (futuros o en fecha actual)
+        $today = now()->startOfDay();
+        $scheduledAppointmentsCount = Appointment::where('fecha_turno', '>=', $today)->count();
+
+        // Empleados
+        $employeesCount = Employee::count();
+
+
+
+
+
         //datos para el primer gráfico de total facturado por mes
-        //estan los nombres en ingles porque hizo la base del codigo gemini, si queres lo cambiamos
+        //estan los nombres en ingles, si queres lo cambiamos
         $monthlyBillTotals = Bill::selectRaw('DATE_FORMAT(fecha_factura, "%Y-%m") as month, SUM(monto_total) as total_amount')
-                                 ->groupBy('month')
-                                 ->orderBy('month', 'asc')
-                                 ->get();
+            ->groupBy('month')
+            ->orderBy('month', 'asc')
+            ->get();
 
         $billMonths = [];
         $billAmounts = [];
 
         foreach ($monthlyBillTotals as $data) {
-            $timestamp = strtotime($data->month . '-01'); 
+            $timestamp = strtotime($data->month . '-01');
             //formatea el mes y año 
             $billMonths[] = strftime('%B %Y', $timestamp); // %B para nombre completo del mes %Y para año
             $billAmounts[] = (float) $data->total_amount;
@@ -95,21 +115,47 @@ class AdministratorController extends Controller
         //datos para el segundo gráfico de cant de mascotas x especie
         try {
             $petsBySpecies = Pet::selectRaw('especie, count(*) as count')
-                                ->groupBy('especie')
-                                ->orderBy('count', 'desc')
-                                ->get();
+                ->groupBy('especie')
+                ->orderBy('count', 'desc')
+                ->get();
             $speciesLabels = $petsBySpecies->pluck('especie')->toArray();
             $speciesCounts = $petsBySpecies->pluck('count')->toArray();
         } catch (\Exception $e) {
             $speciesLabels = ['Sin datos (error en Pet o especie)'];
             $speciesCounts = [0];
         }
-        
-        return view('reportes', [
+
+        // Fecha inicio y fin del mes actual
+        $startOfMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+
+        // Facturas del mes actual
+        $billsThisMonth = Bill::with('client')
+            ->whereBetween('fecha_factura', [$startOfMonth, $endOfMonth])
+            ->orderBy('id', 'desc')
+            ->get();
+
+        // Fecha inicio y fin de la semana actual (lunes a domingo)
+        $startOfWeek = Carbon::now()->startOfWeek();
+        $endOfWeek = Carbon::now()->endOfWeek();
+
+        // Turnos de esta semana
+        $appointmentsThisWeek = Appointment::with('client')
+            ->whereBetween('fecha_turno', [$startOfWeek, $endOfWeek])
+            ->orderBy('fecha_turno')
+            ->get();
+
+
+        return view('admin.reportes', [
+            'petsCount' => $petsCount,
+            'scheduledAppointmentsCount' => $scheduledAppointmentsCount,
+            'employeesCount' => $employeesCount,
             'billMonths' => $billMonths,
             'billAmounts' => $billAmounts,
             'speciesLabels' => $speciesLabels,
             'speciesCounts' => $speciesCounts,
+            'billsThisMonth' => $billsThisMonth,
+            'appointmentsThisWeek' => $appointmentsThisWeek
         ]);
     }
 }
