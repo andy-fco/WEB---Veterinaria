@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use App\Models\User;
 
 class RoleMiddleware
 {
@@ -29,15 +30,37 @@ class RoleMiddleware
             abort(403, 'Acceso denegado: El usuario no tiene un rol asignado.');
         }
 
-        // Verifica si el nombre del rol del usuario coincide con alguno de los roles permitidos
+        $hasRole = false;
         foreach ($roles as $role) {
-            if ($user->role->nombre === $role) { // <--- ¡ESTA ES LA LÍNEA CLAVE!
-                return $next($request); // Permite el acceso
+            switch ($role) {
+                case 'cliente':
+                    if ($user->isClient()) {
+                        $hasRole = true;
+                    }
+                    break;
+                case 'empleado':
+                    if ($user->isEmployee()) {
+                        $hasRole = true;
+                    }
+                    break;
+                case 'administrador':
+                    if ($user->isAdmin()) {
+                        $hasRole = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            if ($hasRole) {
+                break; 
             }
         }
 
+        if ($hasRole) {
+            return $next($request);
+        }
 
-        abort(403, 'Acceso no autorizado para este rol.');
+        return redirect()->route('dashboard')->with('error', 'No tienes permiso para acceder a esta sección.');
     }
 
 
