@@ -61,9 +61,6 @@
                             <div class="row">
                                 <div class="mb-3 col-12">
                                     <label for="cliente" class="form-label">Cliente</label>
-                                    {{-- Asumo que este campo 'cliente' recibirá el ID del cliente o un nombre que se
-                                    buscará en el controlador.
-                                    Lo más robusto sería un select con App\Models\Client::all() --}}
                                     <select name="cliente" id="cliente" class="form-select" required>
                                         <option value="">Selecciona un cliente</option>
                                         @foreach (App\Models\Client::all() as $client)

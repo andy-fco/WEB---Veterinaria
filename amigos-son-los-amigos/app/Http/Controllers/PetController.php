@@ -20,8 +20,8 @@ class PetController extends Controller
             $client = $user->client;
             if ($client) {
                 $pets = Pet::where('cliente_id', $client->id)
-                            ->with('client')
-                            ->get();
+                    ->with('client')
+                    ->get();
             }
             return view('client.mascotas', compact('pets'));
         } elseif ($user->isEmployee()) {
@@ -91,7 +91,7 @@ class PetController extends Controller
     public function show(Pet $pet)
     {
         $user = Auth::user();
-        $pet->load(['client', 'appointments', 'consultations', 'vaccines']);
+        $pet->load(['client', 'appointments', 'vaccines']);
 
         if ($user->isClient()) {
             if ($pet->cliente_id !== $user->client->id) {

@@ -78,7 +78,7 @@
             </a>
 
             <x-primary-button class="btn btn-v text-light">
-                {{ __('Register') }}
+                {{ __('Registrarme') }}
             </x-primary-button>
         </div>
     </form>

@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Bill;
 use App\Models\Client;
-use App\Models\Consultation;
 use App\Models\Diagnosis;
 use App\Models\Employee;
 use App\Models\Pet;
